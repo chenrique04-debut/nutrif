@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="mt-3">
+    <h2 class="lead">Usuários ativos do nutrif:</h2>
+    <ul class="list-group">
+      {% for user in users %}
+        <li class="list-group-item">
+          <a class="link-dark" href="{{ url_for('unique', id=user.id) }}">
+            {{ user.name }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}
+

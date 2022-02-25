@@ -1,0 +1,19 @@
+{% extends  'base.html' %}
+
+{% block content %}
+<div class="d-flex flex-column align-items-center mt-3">
+  <h1 class="">Login</h1>
+  <form action="{{ url_for('login') }}" class="d-flex flex-column gap-3" method="POST">
+    {{ form.csrf_token }}
+    <div class="form-group">
+      <label>E-mail</label>
+      {{ form.email(class="form-control") }}
+    </div>
+    <div class="form-group">
+      <label>Senha</label>
+      {{ form.password(class="form-control") }}
+    </div>
+    {{ form.submit(class="btn btn-primary") }}
+  </form>
+</div>
+{% endblock %}
